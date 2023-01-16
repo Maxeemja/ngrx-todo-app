@@ -1,4 +1,7 @@
-<form action="#" (ngSubmit)="onCreate()">
-  <input type="text" name="name" [(ngModel)]="name">
-  <button [disabled]="!this.name">Create Todo Item</button>
+<form action="#" class="create-form" (ngSubmit)="onCreate()">
+<!--  <input type="text" name="name" [(ngModel)]="name">-->
+  <mat-form-field>
+    <input matInput [(ngModel)]="name" name="name">
+  </mat-form-field>
+  <button mat-raised-button color="accent" [disabled]="!this.name">Create Todo Item</button>
 </form>

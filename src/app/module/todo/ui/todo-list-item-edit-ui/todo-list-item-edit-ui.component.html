@@ -1,5 +1,7 @@
 <form action="#" (ngSubmit)="onEdit()">
-  <input type="text" name="name" [(ngModel)]="name" />
-  <button [disabled]="!name">Ok</button>
-  <button (click)="onCancel()">Cancel</button>
+  <mat-form-field>
+    <input matInput [(ngModel)]="name" [name]="name">
+  </mat-form-field>
+  <button mat-flat-button color="primary" [disabled]="!name">Ok</button>
+  <button mat-flat-button color="warn" (click)="onCancel()">Cancel</button>
 </form>

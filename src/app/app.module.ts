@@ -7,6 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import {TodoModule} from "./module/todo/todo.module";
 import {RouterModule} from "@angular/router";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {RouterModule} from "@angular/router";
     ]),
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    TodoModule
+    BrowserAnimationsModule,
+    TodoModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
