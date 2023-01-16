@@ -3,6 +3,7 @@ import {
   todoCreateAction,
   todoDeleteAction,
   todoEditAction,
+  todoLoadState,
   todoToggleAction,
 } from './todo.actions';
 import { createReducer, on } from '@ngrx/store';
@@ -58,10 +59,11 @@ export const todoReducer = createReducer(
           }
         : todo
     ),
-  }))
+  })),
+  on(todoLoadState, (state, payload) => ({...payload.state})),
 );
 
-// TODO: don't do like that
+// !: don't do like that
 // export const todoReducer = (state = initState, action: TodoActions) => {
 //   switch (action.type) {
 //     case todoActionsType.create:

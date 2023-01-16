@@ -1,4 +1,5 @@
 import {Action,  createAction,  props} from "@ngrx/store";
+import { TodoState } from "./todo.reducer";
 
 
 
@@ -21,6 +22,11 @@ export const todoToggleAction = createAction(
 export const todoEditAction = createAction(
   '[TODO] Edit Item',
   props<{id: number, name: string}>()
+)
+
+export const todoLoadState = createAction(
+  '[TODO] Load State',
+  props<{state: TodoState}>()
 )
 
 // export class TodoCreateAction implements Action {
